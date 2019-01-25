@@ -1,0 +1,51 @@
+{
+  "name": "desktopapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "pack": "webpack --mode production",
+    "electron": "npm run pack && electron index.js",
+    "build": "rm -Rf dist && electron-builder",
+    "build-win": "rmdir /S /Q dist && electron-builder"
+  },
+  "build": {
+    "appId": "com.afonsodev.DesktopApp",
+    "extraFiles": [],
+    "publish": null
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "electron": "^4.0.2",
+    "electron-builder": "^20.38.5",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "bootstrap": "^4.2.1",
+    "file-loader": "^3.0.1",
+    "jquery": "^3.3.1",
+    "ol": "^5.3.0",
+    "react-fontawesome": "^1.6.1",
+    "reactstrap": "^7.1.0",
+    "serve": "^10.1.1"
+  }
+}
