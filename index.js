@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -14,6 +14,12 @@ function createWindow () {
         slashes: true
     }))
     //win.webContents.openDevTools()
+
+    // Comunicate with renderer
+    ipcMain.on('renderer', (event, message) => {
+        // Parse message and send back the result
+        event.sender.send('main', message);
+    });
 
     win.on('closed', () => {
         win = null
